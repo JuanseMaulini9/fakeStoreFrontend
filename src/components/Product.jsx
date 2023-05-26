@@ -15,7 +15,7 @@ export default function Product({
     <>
       <div className="container">
         <div className="container-img">
-          <img src={image} alt={title} className />
+          <img src={image} alt={title} onClick={()=>setModal(!modal)}/>
         </div>
         <div className="container-info">
           <h2 className="title" onClick={() => setModal(!modal)}>

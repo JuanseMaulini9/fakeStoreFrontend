@@ -1,0 +1,27 @@
+.title-category{
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid black;
+}
+
+.category-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.category-item{
+  
+  margin: 3rem;
+  cursor: pointer;
+
+}
+
+.category-item:hover{
+  color: #007bff;
+  text-decoration: underline #007bff;
+
+}

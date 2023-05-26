@@ -1,0 +1,27 @@
+.searcher-container{
+  display: flex;
+  align-items: cente;
+  justify-content: center;
+}
+
+.searcher{
+  height: 24px;
+  border-radius: 4px 0px 0px 4px ;
+  border: 1px solid gray;
+  border-right: none;
+  padding: 0 8px;
+}
+
+.search-button{
+  height: 26px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 0px 4px 4px 0px;
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+.search-button:hover{
+  background-color: #007bff; 
+}

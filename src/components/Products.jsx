@@ -4,7 +4,12 @@ import "./styles/Products.css";
 
 const url = "http://localhost:4000/allProducts";
 
-export default function Products({ output, outputCategory }) {
+export default function Products({
+  output,
+  setOutput,
+  outputCategory,
+  setOutputCategory,
+}) {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -24,6 +29,10 @@ export default function Products({ output, outputCategory }) {
                 product.title.toLowerCase().includes(output.toLowerCase()) &&
                 product.category.toLowerCase() === outputCategory.toLowerCase()
             );
+          } else {
+            filteredData = dataDelete.filter((product) =>
+              product.title.toLowerCase().includes(output.toLowerCase())
+            );
           }
 
           setFilteredProducts(filteredData);
@@ -38,41 +47,19 @@ export default function Products({ output, outputCategory }) {
 
   const handleResetFilter = () => {
     setFilteredProducts(products);
+    setOutputCategory("");
+    setOutput("");
   };
-
-  // useEffect viejo
-  // useEffect(() => {
-  //   try {
-  //     fetch(url)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         const dataDelete = data.slice(1)
-  //         setProducts(dataDelete);
-  //         console.log(dataDelete);
-  //       })
-  //       .catch((error) => {
-  //         console.log("ERROR AL BUSCAR LOS DATOS ", error);
-  //       });
-  //   } catch (error) {
-  //     console.log("ERROR AL BUSCAR LOS DATOS ", error);
-  //   }
-  // }, []);
 
   return (
     <>
-      <h2>Products</h2>
-      <div className="containerButton">
-        <button onClick={handleResetFilter} className="resetButton">
-          {" "}
-          Reset Filter{" "}
-        </button>
-      </div>
-
+      <div className="containerButton"></div>
       <div className="container-products">
         {filteredProducts.map((product) => {
           return (
             <Product
               key={product._id}
+              id={product._id}
               title={product.title}
               price={product.price}
               image={product.image}
@@ -81,7 +68,11 @@ export default function Products({ output, outputCategory }) {
             />
           );
         })}
-      </div>
+      </div>{" "}
+      <button onClick={handleResetFilter} className="resetButton">
+        {" "}
+        Reset Filter{" "}
+      </button>
     </>
   );
 }

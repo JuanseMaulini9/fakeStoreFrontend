@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import "../components/styles/Home.css";
 import { useState } from "react";
 
-export default function Home() {
+export default function Home(cart, setCart) {
   const [filter, setFilter] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('');
 
@@ -15,7 +15,7 @@ export default function Home() {
         category={categoryFilter}
         setCategory={setCategoryFilter}
       ></Sidebar>
-      <Products output={filter} outputCategory={categoryFilter}></Products>
+      <Products output={filter} setOutput={setFilter} outputCategory={categoryFilter} setOutputCategory={setCategoryFilter} cart={cart} setCart={setCart}></Products>
     </div>
   );
 }

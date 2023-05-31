@@ -1,0 +1,30 @@
+.cart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  top: 4rem;
+}
+
+.done{
+  width: 250px;
+  margin-top: 10px;
+  position: relative;
+  padding: .5rem 1rem;
+  background-color: #0056b3;
+  color: #fff;
+  font-size: .9rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.done:hover{
+  background-color: #007bff;
+}
+
+
+
+
+

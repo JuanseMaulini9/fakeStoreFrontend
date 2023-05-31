@@ -1,5 +1,6 @@
 import "./styles/Modal.css";
 import "./styles/Product.css";
+import { useCartContext } from "../context/CartContext";
 
 export default function Modal({
   estado,
@@ -10,6 +11,10 @@ export default function Modal({
   description,
   image,
 }) {
+
+  const { cart, setCart } = useCartContext();
+
+
   return (
     <>
       {estado && (
@@ -23,7 +28,7 @@ export default function Modal({
                 <h3 className="modal-container-info-price">$ {price}</h3>
                 <p className="modal-container-info-category">category: <span className="modal-container-info-categoryType">{category}</span> </p>
                 <p className="modal-container-info-description">{description}</p>
-                <button className="button">AGREGAR</button>
+                <button className="button" onClick={()=>setCart([...cart, {title, price, image}])}>AGREGAR</button>
               </div>
             <button className="close" onClick={() => setEstado(false)}>
               X

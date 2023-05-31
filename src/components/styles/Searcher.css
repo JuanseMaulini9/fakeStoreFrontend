@@ -2,6 +2,7 @@
   display: flex;
   align-items: cente;
   justify-content: center;
+  margin-top: 5px;
 }
 
 .searcher{

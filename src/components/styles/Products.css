@@ -3,7 +3,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-left: 21rem;
-  
+  position: relative;
+  top: 3rem
 }
 
 .containerButton{
@@ -14,15 +15,22 @@
 }
 
 .resetButton{
-  width: 250px;
+  width: 50px;
   display: flex;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
   align-items: center;
   justify-content: center;
   padding: .5rem 1rem;
-  background-color: #007bff;
+  background-color: #0056b3;
   color: #fff;
   font-size: .9rem;
   border: none;
   border-radius: 6.25rem;
   cursor: pointer;
+}
+
+.resetButton:hover{
+  background-color: #007bff;
 }
